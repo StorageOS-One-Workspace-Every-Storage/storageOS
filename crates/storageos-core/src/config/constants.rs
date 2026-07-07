@@ -30,11 +30,20 @@ pub const APP_IDENTIFIER: &str = "com.storageos.desktop";
 /// Default Relay server port.
 pub const DEFAULT_RELAY_PORT: u16 = 19800;
 
+/// Default Relay URL for development (Render hosted).
+pub const DEFAULT_RELAY_URL: &str = "wss://storageos.onrender.com/ws";
+
+/// Default Relay URL for local development (self-hosted).
+pub const DEFAULT_RELAY_URL_LOCAL: &str = "ws://localhost:19800/ws";
+
+/// Default Relay URL for production (placeholder).
+pub const DEFAULT_RELAY_URL_PROD: &str = "wss://relay.storageos.app/ws";
+
 /// Relay: heartbeat interval (30 seconds).
 pub const RELAY_HEARTBEAT_INTERVAL_SECS: u64 = 30;
 
-/// Relay: connection timeout (10 seconds).
-pub const RELAY_CONNECTION_TIMEOUT_SECS: u64 = 10;
+/// Relay: connection timeout (90 seconds — Render free tier cold starts take 30-60s).
+pub const RELAY_CONNECTION_TIMEOUT_SECS: u64 = 90;
 
 /// Relay: reconnect backoff steps in seconds.
 pub const RELAY_RECONNECT_DELAYS: &[u64] = &[1, 2, 5, 10, 30, 60];
